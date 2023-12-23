@@ -1,0 +1,244 @@
+:root {
+    --PrimaryColor: hsl(231, 42%, 13%);
+    --HoverColor: hsl(231, 87%, 12%);
+    --whiteColor: hsl(0, 0%, 100%);
+    --blackColor: hsl(0, 0%, 18%);
+    --textColor: hsl(240, 1%, 48%);
+    --whiteColorDream: hsl(0, 0%, 93%);
+    --greyBg: hsl(0, 0%, 96%);
+    --greyText: hsl(0, 0%, 75%);
+    --inputColor: hsl(330, 12%, 97%);
+    --boxShadow: box-shadow: 0 2px 8px 2px rgba(178, 178, 178, 0.189);
+}
+
+.home {
+    height: 80vh;
+    min-height: 700px;
+    background: var(--PrimaryColor);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+    position: relative;
+
+    .secContainer {
+        display: flex;
+        flex-direction: column;
+
+        .homeText {
+            color: var(--whiteColor);
+            font-size: 55px;
+            margin: 85px 0 0 0;
+
+            .title {
+                color: var(--whiteColor);
+                font-size: 2rem;
+                font-weight: 700;
+                line-height: 2.5rem;
+            }
+        }
+
+        .homeCard {
+            width: 100%;
+            padding: 2rem;
+            background: var(--whiteColor);
+            gap: 1rem;
+            top: 15px;
+            left: 50%;
+            position: relative;
+            transform: translateX(-50%); /* Centra horizontalmente usando transform */
+
+            .originnDiv, .destinationDiv, .dateDiv, .passengerDiv{
+                width: 100%;
+
+                label{
+                    display: block;
+                    color: var(--textColor);
+                    font-weight: 500;
+                    font-size: 13px;
+                    padding-bottom: .4rem;
+                }
+
+                input{
+                    width: 100%;
+                    background: var(--inputColor);
+                    border: none;
+                    padding: 10px;
+                    font-size: 13px;
+                    font-weight: 500;
+
+                    &::placeholder{
+                        font-size: 13px;
+                        opacity: .5;
+                        font-weight: 400;
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                }
+            }
+
+            .btn{
+                width: 100%;
+                padding: 0.6rem 1.5rem;
+                background: var(--whiteColor);
+                color: var(--PrimaryColor);
+                border: 1px solid var(--PrimaryColor);
+                font-weight: 600;
+
+                &:hover{
+                    color: var(--whiteColor);
+                    background: var(--PrimaryColor);
+                }
+            }
+        }
+    }
+
+    .bgContainer {
+        width: 100%;
+        height: 100%;
+
+        .bgImage {
+            width: 80%;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+
+@media screen and (min-width:425px) {
+    .home {
+        height: 80vh;
+    
+        .secContainer {    
+            .homeText {
+                margin: 100px 0 20px 0;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+    .home {
+        .secContainer {
+            .homeText {
+                margin: 120px 0;
+                width: 75%;
+    
+                .title {
+                    font-size: 3rem;
+                }
+            }
+    
+            .homeCard {
+                grid-template-columns: repeat(2, 1fr);
+                
+                button{
+                    grid-column-end: span 2;
+                }
+            }
+        }
+
+        .bgContainer {    
+            .bgImage {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .home {    
+        .secContainer {
+            .homeText {
+                width: 50%;
+                .title {
+                    font-size: 4.5rem;
+                    line-height: 4rem;
+                }
+            }
+    
+            .homeCard {
+                width: 60%;
+                left: 30%;
+            }
+        }
+    
+        .bgContainer {    
+            .bgImage {
+                width: 30%;
+            }
+        }
+    }
+}
+
+.about {
+    .secContainer {
+        .mainContent {
+            gap: 1rem;
+
+            .singleItem {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Centra horizontalmente */
+                justify-content: center; /* Centra verticalmente */
+                gap: 20px;
+                margin-top: 35px;
+
+                img {
+                    background: rgba(161, 161, 161, 0.265);
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+
+                h3 {
+                    font-weight: 700;
+                    color: var(--blackColor);
+                    padding: 0.5rem;
+                }
+
+                p {
+                    font-size: 13px;
+                    font-weight: 500;
+                    padding-bottom: 0.5rem;
+                    color: var(--textColor);
+                    width: 70%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:556px) {
+    .about {
+        .secContainer {
+            .mainContent {    
+                .singleItem {
+                    &:last-child{
+                        position: relative;
+                        left: 50%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .about {
+        .secContainer {
+            .mainContent {    
+                .singleItem {
+                    margin-top: 0;
+                    &:last-child{
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
