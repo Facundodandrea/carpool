@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 import './home.css'
 
 import Navbar from '../../components/navbar/Navbar'
@@ -11,6 +11,76 @@ import enjoyImg from '../../assets/images/Car driving-pana.svg'
 import Cards from '../../components/cards/Cards'
 
 const Home = () => {
+
+  const [filters, setFilters] = useState({
+    time: '',
+    canBringPets: false,
+    canSmoke: false,
+  });
+
+  const handleFilterChange = (filterType, value) => {
+    setFilters({
+      ...filters,
+      [filterType]: value,
+    });
+  };
+
+  const travelProps = {
+    offers: [
+      {
+        id:1,
+        orinTitle:'Buenos Aires',
+        destTitel: 'Bariloche',
+        horaLlegada: '12:00',
+        horaSalida: '00:00',
+        price: 14000,
+        pets: 'si',
+        smoking: 'si'
+      },
+      {
+        id:2,
+        orinTitle: 'Tucumán',
+        destTitel: 'Buenos Aires',
+        horaLlegada: '12:00',
+        horaSalida: '6:00',
+        price: 1600,
+        pets: 'si',
+        smoking: 'si'
+      },
+      {
+        id:3,
+        orinTitle: 'Santa Fe',
+        destTitel: 'Córdoba',
+        horaLlegada: '12:00',
+        horaSalida: '18:30',
+        price: 1500,
+        pets: 'no',
+        smoking: 'no'
+      },
+      {
+        id:4,
+        orinTitle: 'Misiones',
+        destTitel: 'Mendoza',
+        horaLlegada: '12:00',
+        horaSalida: '14:00',
+        price: 1300,
+        pets: 'si',
+        smoking: 'no'
+      },
+      {
+        id:5,
+        orinTitle: 'Salta',
+        destTitel: 'Tucumán',
+        horaLlegada: '12:00',
+        horaSalida: '16:00',
+        price: 1200,
+        pets: 'no',
+        smoking: 'si'
+      },
+    ],
+    filters,
+    onFilterChange: handleFilterChange,
+  }
   return (
     <>
     <Navbar />
@@ -106,7 +176,7 @@ const Home = () => {
         <h2 className="secTitle">
           Viajes rápidos
         </h2>
-        <Cards />
+        <Cards {...travelProps}/>
       </div>
     </section>
 
