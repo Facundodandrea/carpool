@@ -108,22 +108,12 @@
     margin: 100px 0 20px 0;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 425px) {
+  .home {
+    height: 80vh;
+  }
   .home .secContainer .homeText {
-    margin: 120px 0;
-    width: 75%;
-  }
-  .home .secContainer .homeText .title {
-    font-size: 3rem;
-  }
-  .home .secContainer .homeCard {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .home .secContainer .homeCard button {
-    grid-column-end: span 2;
-  }
-  .home .bgContainer .bgImage {
-    width: 50%;
+    margin: 100px 0 20px 0;
   }
 }
 @media screen and (min-width: 1024px) {
