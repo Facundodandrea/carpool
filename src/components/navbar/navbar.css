@@ -20,6 +20,7 @@
   width: 100%;
   padding: 1rem;
   z-index: 1000;
+  background: var(--PrimaryColor);
 }
 .navBarSection .header .logoDiv .logo {
   color: var(--whiteColor);

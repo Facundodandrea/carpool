@@ -113,8 +113,9 @@ const Offerseat = () => {
                 id="vehicle"
                 value={selectedVehicle}
                 onChange={(e) => handleVehicleChange(e.target.value)}
+                className='originnDiv'
               >
-                <option value="" disabled>Select an option</option>
+                <option value="" disabled>Selecciona un vehiculo</option>
               </select>
             </div>
 

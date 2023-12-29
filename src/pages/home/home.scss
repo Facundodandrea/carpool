@@ -119,30 +119,13 @@
     }
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width:425px) {
     .home {
-        .secContainer {
+        height: 80vh;
+    
+        .secContainer {    
             .homeText {
-                margin: 120px 0;
-                width: 75%;
-    
-                .title {
-                    font-size: 3rem;
-                }
-            }
-    
-            .homeCard {
-                grid-template-columns: repeat(2, 1fr);
-                
-                button{
-                    grid-column-end: span 2;
-                }
-            }
-        }
-
-        .bgContainer {    
-            .bgImage {
-                width: 50%;
+                margin: 100px 0 20px 0;
             }
         }
     }
